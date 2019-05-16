@@ -1,0 +1,34 @@
+{
+    "name": "morsekode/recursive-matrix",
+    "description": "Allow matrices to be infinitely nested.",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "recursive matrix"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Justin Jordan",
+            "homepage": "https://justinjordan.io"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "Morsekode\\RecursiveMatrix\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Recursive Matrix",
+        "handle": "recursive-matrix",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "class": "Morsekode\\RecursiveMatrix"
+    }
+}
