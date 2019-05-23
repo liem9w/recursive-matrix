@@ -21,12 +21,14 @@
     },
     "autoload": {
         "psr-4": {
+          "Morsekode\\": "src/",
           "Morsekode\\RecursiveMatrix\\": "src/"
         }
     },
     "extra": {
-        "name": "Recursive Matrix",
         "handle": "recursive-matrix",
+        "name": "Recursive Matrix",
+        "basePath": "src/",
         "hasCpSettings": false,
         "hasCpSection": false,
         "class": "Morsekode\\RecursiveMatrix"
