@@ -4,7 +4,9 @@ namespace Morsekode\RecursiveMatrix\Models;
 
 use Craft;
 use craft\web\View;
+use craft\elements\MatrixBlock;
 use Morsekode\RecursiveMatrix\Models\Block;
+use Morsekode\RecursiveMatrix\Models\ContentBlock;
 
 class WrapperBlock extends Block
 {
@@ -12,11 +14,6 @@ class WrapperBlock extends Block
     public $wrapperType;
 
     public $childComponents = [];
-
-    public function __construct(...$args)
-    {
-        parent::__construct(...$args);
-    }
 
     public function render() {
         $view = Craft::$app->getView();
@@ -40,6 +37,7 @@ class WrapperBlock extends Block
 
     public function addChild(Block $block)
     {
+        $block->hasContainer = true;
         $this->childComponents[] = $block;
     }
 }

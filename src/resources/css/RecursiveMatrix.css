@@ -1,0 +1,13 @@
+/** Hide nested blocks when collapsed */
+.matrixblock.collapsed {
+    overflow: hidden;
+}
+
+/** Spacing on nested blocks wrapper */
+.matrix-field > .blocks .blocks {
+    margin-top: 20px
+}
+
+.mc-solid-containerStartGrid > .blocks .mc-solid-containerStartGridColumns {
+	background: rgba(255, 255, 255, 0.498039);
+}

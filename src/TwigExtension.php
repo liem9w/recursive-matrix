@@ -4,12 +4,12 @@ namespace Morsekode\RecursiveMatrix;
 
 use Twig\TwigFilter;
 use craft\elements\Entry;
-use craft\models\MatrixBlockType;
+use craft\elements\MatrixBlock;
 use craft\elements\db\MatrixBlockQuery;
-use Morsekode\RecursiveMatrix\Models\Block;
-use Morsekode\RecursiveMatrix\Models\Context;
-use Morsekode\RecursiveMatrix\Models\ContentBlock;
-use Morsekode\RecursiveMatrix\Models\WrapperBlock;
+use Morsekode\RecursiveMatrix\models\Block;
+use Morsekode\RecursiveMatrix\models\Context;
+use Morsekode\RecursiveMatrix\models\ContentBlock;
+use Morsekode\RecursiveMatrix\models\WrapperBlock;
 
 class TwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
 {
@@ -35,12 +35,8 @@ class TwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsIn
                 continue;
             }
 
-            $context = Context::create([
-                'entry' => $entry
-            ]);
-
             // add block to ContentBlock or WrapperBlock
-            $currentBlock = $block instanceof Block ? $block : Block::create($block, $context);
+            $currentBlock = $block instanceof Block ? $block : Block::create($block, $entry);
 
             switch (get_class($currentBlock)) {
                 case ContentBlock::class:
@@ -75,47 +71,6 @@ class TwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsIn
                     }
                     break;
             }
-
-            // $contentComponent = $block instanceof ContentComponents_BaseComponentModel
-            //     ? $block
-            //     : ContentComponents_BaseComponentModel::factory($block, $context);
-
-            // $isContentBlock = get_class($contentComponent) == ContentComponents_ContentBlockModel::class;
-
-            // if ($isContentBlock) {
-            //     if ($currentNestingLevel > 0) {
-            //         $currentWrapperComponent->addChildComponent($contentComponent);
-            //     } else {
-            //         $levelComponents[] = $contentComponent;
-            //     }
-
-            //     continue;
-            // }
-
-            // if ($contentComponent->isStartWrapper()) {
-            //     if ($currentNestingLevel > 0) {
-            //         $currentWrapperComponent->addChildComponent($contentComponent);
-            //     } else {
-            //         $currentWrapperComponent = $contentComponent;
-            //     }
-
-            //     $currentNestingLevel++;
-
-            //     continue;
-            // }
-
-            // if ($contentComponent->isEndWrapper()) {
-            //     if ($currentNestingLevel > 1) {
-            //         $currentWrapperComponent->addChildComponent($contentComponent);
-            //     } else {
-            //         $levelComponents[] = $currentWrapperComponent;
-            //         unset($currentWrapperComponent);
-            //     }
-
-            //     $currentNestingLevel--;
-
-            //     continue;
-            // }
         }
 
         return $currentLevelBlocks;
