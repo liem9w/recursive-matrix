@@ -27,5 +27,7 @@ class Assets extends AssetBundle
             'js/MatrixHierarchyPlugin.js',
             'js/RecursiveMatrix.js',
         ];
+
+        parent::init();
     }
 }

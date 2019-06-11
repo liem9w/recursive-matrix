@@ -14,7 +14,9 @@ class RecursiveMatrix extends Plugin
         // register Twig Extension
         Craft::$app->view->registerTwigExtension(new TwigExtension());
 
-        Craft::$app->view->registerAssetBundle(Assets::class);
+        if (Craft::$app->getRequest()->getIsCpRequest()) {
+            Craft::$app->view->registerAssetBundle(Assets::class);
+        }
 
         parent::init();
     }
