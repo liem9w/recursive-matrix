@@ -6,10 +6,10 @@ use Twig\TwigFilter;
 use craft\elements\Entry;
 use craft\elements\MatrixBlock;
 use craft\elements\db\MatrixBlockQuery;
-use Morsekode\RecursiveMatrix\models\Block;
-use Morsekode\RecursiveMatrix\models\Context;
-use Morsekode\RecursiveMatrix\models\ContentBlock;
-use Morsekode\RecursiveMatrix\models\WrapperBlock;
+use Morsekode\RecursiveMatrix\Models\Block;
+use Morsekode\RecursiveMatrix\Models\Context;
+use Morsekode\RecursiveMatrix\Models\ContentBlock;
+use Morsekode\RecursiveMatrix\Models\WrapperBlock;
 
 class TwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
 {

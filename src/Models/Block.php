@@ -1,12 +1,12 @@
 <?php
 
-namespace Morsekode\RecursiveMatrix\models;
+namespace Morsekode\RecursiveMatrix\Models;
 
 use Exception;
 use craft\elements\Entry;
 use craft\elements\MatrixBlock;
-use Morsekode\RecursiveMatrix\models\Context;
-use Morsekode\RecursiveMatrix\models\Block;
+use Morsekode\RecursiveMatrix\Models\Context;
+use Morsekode\RecursiveMatrix\Models\Block;
 
 class Block 
 {
