@@ -36,7 +36,9 @@
          * @returns {Craft.MatrixHierarchyPlugin}
          */
         init: function(matrixFields) {
-            Craft.MatrixInput.prototype.addBlock = this._decorateMethod(Craft.MatrixInput.prototype.addBlock);
+            if (typeof Craft.MatrixInput === 'object') {
+                Craft.MatrixInput.prototype.addBlock = this._decorateMethod(Craft.MatrixInput.prototype.addBlock);
+            }
 
             return this.layout(matrixFields)
                 .setupHandlers()
