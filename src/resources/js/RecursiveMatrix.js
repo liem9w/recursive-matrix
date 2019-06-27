@@ -1,13 +1,11 @@
 window.recursiveMatrix = new (function() {
-  var _this = this
-
   /**
    * Constructor
    *
    * Initialize app on document load
    */
   this.constructor = function() {
-    $(_this.init.bind(_this))
+    $(this.init.bind(this))
   }
 
   /**

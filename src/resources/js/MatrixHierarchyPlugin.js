@@ -36,7 +36,7 @@
          * @returns {Craft.MatrixHierarchyPlugin}
          */
         init: function(matrixFields) {
-            if (typeof Craft.MatrixInput === 'object') {
+            if (typeof Craft.MatrixInput !== 'undefined') {
                 Craft.MatrixInput.prototype.addBlock = this._decorateMethod(Craft.MatrixInput.prototype.addBlock);
             }
 
@@ -88,7 +88,7 @@
 
             this.enabled = true;
 
-            $(document).on('submit', 'form#container', this.onSubmitHandler);
+            $(document).on('submit', 'form#main-form', this.onSubmitHandler);
 
             return this;
         },
@@ -105,7 +105,7 @@
 
             this.enabled = false;
 
-            $(document).off('submit', 'form#container', this.onSubmitHandler);
+            $(document).off('submit', 'form#main-form', this.onSubmitHandler);
 
             return this;
         },
