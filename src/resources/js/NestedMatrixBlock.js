@@ -98,7 +98,8 @@
          * @returns {string}
          */
         getHandle: function () {
-            return this.$block.find('input:hidden:first').val();
+            //return this.$block.find('input:hidden:first').val();
+            return this.$block.find('input:hidden:eq(1)').val();
         },
 
         /**
