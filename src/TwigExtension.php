@@ -11,12 +11,16 @@ use Morsekode\RecursiveMatrix\Models\Context;
 use Morsekode\RecursiveMatrix\Models\ContentBlock;
 use Morsekode\RecursiveMatrix\Models\WrapperBlock;
 
-class TwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
+use Twig\Environment;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
+
+class TwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
      * Automatically adds this to Twig globals
      */
-    public function getGlobals()
+    public function getGlobals() : array
     {
         return [
             'recursiveMatrix'   => $this,
