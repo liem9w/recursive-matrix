@@ -1,5 +1,5 @@
 {
-    "name": "morsekode/recursive-matrix",
+    "name": "9thwonder/recursive-matrix",
     "description": "Allow matrices to be infinitely nested.",
     "type": "craft-plugin",
     "keywords": [
@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.0.0-RC1"
+        "craftcms/cms": "^4.0.0"
     },
     "autoload": {
         "psr-4": {
